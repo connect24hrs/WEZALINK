@@ -1,0 +1,17 @@
+[
+    { "name": "Tom", "amount": "sh1000", "status": "Paid" },
+    { "name": "Flossy", "amount": "sh1000", "status": "Paid" },
+    { "name": "Gily-CM", "amount": "sh2000", "status": "Paid" },
+    { "name": "Kev-Kiprono", "amount": "sh2000", "status": "Paid" },
+    { "name": "Anto", "amount": "sh1000", "status": "Paid" },
+    { "name": "Deno-DM", "amount": "sh2000", "status": "Paid" },
+    { "name": "Faith Chepkemoi", "amount": "sh1000", "status": "Paid" },
+    { "name": "Kev-Mutai", "amount": "sh1000", "status": "Paid" },
+    { "name": "Omwenga", "amount": "sh1500", "status": "Paid" },
+    { "name": "Faith-Omwenga", "amount": "sh1500", "status": "Paid" },
+    { "name": "Sammy", "amount": "sh1000", "status": "Paid" },
+    { "name": "Amos-Simiyu", "amount": "sh1000", "status": "Paid" },
+    { "name": "Edu-Rop", "amount": "sh1000", "status": "Paid" },
+    { "name": "Dennis", "amount": "sh1000", "status": "Paid" }
+   
+]

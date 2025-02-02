@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribution</title>
+    <style>
+        body {
+            background-color: #030728;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            position: relative;
+        }
+
+        h1 {
+            color: lightgray;
+            font-size: 5rem;
+            position: absolute;
+            margin-top: 0;
+            animation: bounce 4s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(50vh);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh);
+                opacity: 1;
+            }
+        }
+
+        .particle, .star, .white-star {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: fall 3s linear infinite;
+            opacity: 0;
+        }
+
+        .star {
+            width: 12px;
+            height: 12px;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        .white-star {
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: diagonal-fall 2s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes diagonal-fall {
+            0% {
+                transform: translate(-10vw, -10vh) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(10vw, 100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        .table-container {
+            position: absolute;
+            bottom: 20px;
+            width: 80%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+
+        th, td {
+            border: 1px solid white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank you all</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Tom</td><td>sh1000</td><td>Paid</td></tr>
+                <tr><td>Flossy</td><td>sh1000</td><td>Paid</td></tr>
+                <tr><td>Gily-CM</td><td>sh2000</td><td>Paid</td></tr>
+                <tr><td>Kev-Kiprono</td><td>sh2000</td><td>Paid</td></tr>
+                <tr><td>Anto</td><td>sh1000</td><td>Paid</td></tr>
+                <tr><td>Deno-DM</td><td>sh2000</td><td>Paid</td></tr>
+                <tr><td>Faith Chepkemoi</td><td>sh1000</td><td>Paid</td></tr>
+                <tr><td>Kev-Mutai</td><td>sh1000</td><td>Paid</td></tr>
+                <tr><td>Omwenga</td><td>sh1500</td><td>Paid</td></tr>
+                <tr><td>Faith-Omwenga</td><td>sh1500</td><td>Paid</td></tr>
+                <tr><td>Sammy</td><td>sh1000</td><td>Paid</td></tr>
+                <tr><td>Amos-Simiyu</td><td>sh1000</td><td>Paid</td></tr>
+                <tr><td>Edu-Rop</td><td>sh1000</td><td>Paid</td></tr>
+                <tr><td>Dennis</td><td>sh1000</td><td>Paid</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function createParticle(type) {
+            const particle = document.createElement('div');
+            particle.classList.add(type);
+            document.body.appendChild(particle);
+
+            const size = Math.random() * 10 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            const colors = ['#ff4d4d', '#4dff4d', '#4d4dff', '#ffff4d', '#ff4dff', '#FFD700'];
+            if (type !== 'white-star') {
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            }
+            
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.animationDuration = `${Math.random() * 2 + 2}s`;
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 3000);
+        }
+
+        setInterval(() => createParticle('particle'), 150);
+        setInterval(() => createParticle('star'), 300);
+        setInterval(() => createParticle('white-star'), 200);
+    </script>
+</body>
+</html>
